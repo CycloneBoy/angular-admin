@@ -1,79 +1,97 @@
 <nz-layout class="app-layout">
-    <nz-sider class="menu-sidebar"
-              nzCollapsible
-              nzWidth="256px"
-              nzBreakpoint="md"
-              [(nzCollapsed)]="isCollapsed"
-              [nzTrigger]="null">
-      <div class="sidebar-logo">
-        <a href="https://ng.ant.design/" target="_blank">
-          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-          <h1>AngularAdmin</h1>
-        </a>
-      </div>
-      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed"s
-            *ngFor="let menu of menuList">
-                <li nz-submenu nzOpen nzTitle={{menu.title}} nzIcon={{menu.icon}}>
-                    <div *ngIf="menu.children.length">
-                            <ul  *ngFor="let menuItem of menu.children">
-                                    <li nz-menu-item nzMatchRouter >
-                                        <a routerLink="{{ menuItem.key}}">{{menuItem.title}}</a>
-                                    </li>
-                            </ul>
-                    </div>
-                    <div *ngIf="menu.children.length == 0">
-                            <ul>
-                                    <li nz-menu-item nzMatchRouter>
-                                            <a routerLink="{{ menu.key}}">{{menu.title}}</a>
-                                    </li>
-                            </ul>
-                    </div>
-                   
-                </li>
-        </ul>
-       
-      <!-- <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-        <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-          <ul>
+  <nz-sider
+    class="menu-sidebar"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+  >
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+        <h1>AngularAdmin</h1>
+      </a>
+    </div>
+    <ul
+      nz-menu
+      nzTheme="dark"
+      nzMode="inline"
+      [nzInlineCollapsed]="isCollapsed"
+      s
+      *ngFor="let menu of menuList"
+    >
+      <li
+        nz-submenu
+        nzOpen
+        nzTitle="{{ menu.title }}"
+        nzIcon="{{ menu.icon }}"
+        routerLink="{{ menu.key }}"
+      >
+        <div *ngIf="menu.children.length">
+          <ul *ngFor="let menuItem of menu.children">
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/welcome">Welcome</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>Monitor</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>Workplace</a>
+              <a routerLink="{{ menuItem.key }}">
+                <span title>
+                  <i nz-icon nzType="{{ menuItem.icon }}"></i>
+                  <span>{{ menuItem.title }}</span>
+                </span>
+              </a>
             </li>
           </ul>
-        </li>
-        <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-          <ul>
-            <li nz-menu-item nzMatchRouter>
-              <a>Basic Form</a>
-            </li>
-          </ul>
-        </li>
-        
-        
-      </ul> -->
-     
-    </nz-sider>
-    <nz-layout>
-      <nz-header>
-        <div class="app-header">
-          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-              <i class="trigger"
-                 nz-icon
-                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        </div>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <div nz-row class="header-top">
+          <div nz-col [nzSpan]="6" class="logo">
+            <span class="header-trigger" (click)="toggleCollapsed()">
+              <i
+                class="trigger"
+                nz-icon
+                [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
               ></i>
-          </span>
-        </div>
-      </nz-header>
-      <nz-content>
-        <div class="inner-content">
-          <router-outlet></router-outlet>
-        </div>
-      </nz-content>
-    </nz-layout>
+            </span>
+            
+          </div>
+      
+          <div nz-col [nzSpan]="4" nzOffset="14">
+            <a nz-dropdown [nzDropdownMenu]="menu">
+              <!-- <nz-badge [nzCount]="userMessageCount" style="margin-right: 24px;"> -->
+                <nz-avatar
+                  nzIcon="user"
+                  nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                >
+                </nz-avatar>
+              <!-- </nz-badge> -->
+                <span>admin</span>
+              
+            </a>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+              <ul nz-menu>
+                <li nz-menu-item>详情</li>
+                <li nz-menu-item>设置</li>
+                <li nz-menu-divider></li>
+                <li nz-menu-item>退出</li>
+              </ul>
+            </nz-dropdown-menu>
+           
+          </div>
+      </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>List</nz-breadcrumb-item>
+        <nz-breadcrumb-item>App</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
   </nz-layout>
-  
+</nz-layout>

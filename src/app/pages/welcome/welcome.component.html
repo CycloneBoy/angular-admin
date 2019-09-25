@@ -1,3 +1,21 @@
-<h1>
-    欢迎环球车队
-</h1>
+<div class="container-fluid">
+  <div class="we-header">
+    <app-header></app-header>
+  </div>
+  <div class="row">
+    <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10">
+      <app-content>
+        <router-outlet></router-outlet>
+      </app-content>
+
+    </div>
+    <div class="col-sm-3 col-md-6 col-lg-4 col-xl-2">
+      <app-nav-right></app-nav-right>
+    </div>
+  </div>
+
+  <div class="we-footer">
+    <app-footer></app-footer>
+  </div>
+
+</div>

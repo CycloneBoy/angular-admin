@@ -12,6 +12,14 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { LoginComponent } from './pages/login/login/login.component';
 import { NavLeftComponent } from './components/nav-left/nav-left.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { TableComponent } from './pages/table/table.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+
+
+import { HeroesModule }  from './heroes/heroes.module'
+import { CrisisCenterModule }      from './crisis-center/crisis-center.module';
 
 registerLocaleData(zh);
 
@@ -19,16 +27,22 @@ registerLocaleData(zh);
   declarations: [
     AppComponent,
     LoginComponent,
-    NavLeftComponent
+    NavLeftComponent,
+    HeaderComponent,
+    CrisisListComponent,
+    TableComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     IconsProviderModule,
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HeroesModule,
+    CrisisCenterModule,
+    AppRoutingModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

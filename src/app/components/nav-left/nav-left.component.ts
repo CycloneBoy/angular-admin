@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Constants } from './../../../config/Constants';
+
+import { Component, OnInit, Input } from '@angular/core';
 import { Menu } from './Menu';
+import { NzIconService } from 'ng-zorro-antd';
+
 
 @Component({
   selector: 'app-nav-left',
@@ -8,56 +12,20 @@ import { Menu } from './Menu';
 })
 export class NavLeftComponent implements OnInit {
 
-  menuList : Array<Menu>;
+  @Input() menuList : Array<Menu>;
+  isCollapsed = true;
+  username : string = "环球";
+  userMessageCount : number = 10;
+
 
   constructor() { }
 
   ngOnInit() {
-    this.menuList = [
-      {
-        title: '员工管理',
-        key: '/user',
-        icon: "user",
-        children:[]
-    },
-    {
-        title: '车辆地图',
-        key: '/bikeMap',
-        icon: "fire",
-        children:[]
-    },
-    {
-      title: '图表',
-      key: '/charts',
-      icon: "instagram",
-      children: [
-          {
-              title: '柱形图',
-              key: '/charts/bar',
-              icon: "bar-chart",
-              children:[]
-          },
-          {
-              title: '饼图',
-              key: '/charts/pie',
-              icon: "pie-chart",
-              children:[]
-          },
-          {
-              title: '折线图',
-              key: '/charts/line',
-              icon: "line-chart",
-              children:[]
-          }
-      ]
-  },
-    ]
+    this.menuList = Constants.MENU_LIST;
   }
-
-  // 菜单渲染
-  renderMenu(data: string[]) {
-
+ 
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
   }
-    
 };
 
