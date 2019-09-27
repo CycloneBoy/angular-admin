@@ -1,0 +1,13 @@
+
+<h2>我的危机中心</h2>
+
+<ul class="crises">
+  <li *ngFor="let crisis of crises$ | async"
+    [class.selected]="crisis.id === selectedId">
+    <a [routerLink]="['/crisis', crisis.id]">
+      <span class="badge">{{ crisis.id }}</span>{{ crisis.name }}
+    </a>
+  </li>
+</ul>
+
+<button routerLink="/sidekicks">跳转到大厅</button>

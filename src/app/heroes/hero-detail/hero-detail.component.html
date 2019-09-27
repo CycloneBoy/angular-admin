@@ -1,0 +1,13 @@
+<h2>英雄</h2>
+<div *ngIf="hero$ | async as hero">
+  <h3>"{{ hero.name }}"</h3>
+  <div>
+    <label>编号: </label>{{ hero.id }}</div>
+  <div>
+    <label>姓名: </label>
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+  </div>
+  <p>
+    <button (click)="gotoHeroes(hero)">Back</button>
+  </p>
+</div>

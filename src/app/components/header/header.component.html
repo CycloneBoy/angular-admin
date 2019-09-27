@@ -1,0 +1,36 @@
+<div
+  class="alain-default__nav-item d-flex align-items-center px-sm"
+  nz-dropdown
+  nzPlacement="bottomRight"
+  [nzDropdownMenu]="userMenu"
+>
+<nz-badge [nzCount]="userMessageCount" style="margin-right: 24px;">
+  <nz-avatar
+    [nzSrc]="settings_user_avatar"
+    nzSize="small"
+    class="mr-sm"
+  ></nz-avatar>
+  <span>{{ settings_user_name }}</span>
+</nz-badge>
+</div>
+<nz-dropdown-menu #userMenu="nzDropdownMenu">
+  <div nz-menu class="width-sm">
+    <div nz-menu-item routerLink="/pro/account/center">
+      <i nz-icon nzType="user" class="mr-sm"></i>
+      个人中心
+    </div>
+    <div nz-menu-item routerLink="/pro/account/settings">
+      <i nz-icon nzType="setting" class="mr-sm"></i>
+      个人设置
+    </div>
+    <div nz-menu-item routerLink="/exception/trigger">
+      <i nz-icon nzType="close-circle" class="mr-sm"></i>
+     错误触发
+    </div>
+    <li nz-menu-divider></li>
+    <div nz-menu-item (click)="logout()">
+      <i nz-icon nzType="logout" class="mr-sm"></i>
+      退出
+    </div>
+  </div>
+</nz-dropdown-menu>
