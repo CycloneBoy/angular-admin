@@ -1,0 +1,14 @@
+<div class="travel-item-list">
+
+
+<ul class="travel-item-list">
+<!--  <li *ngFor="let travelItem of travelItemList">-->
+<!--    {{ travelItem.title}}-->
+<!--  </li>-->
+<!--    <li>{{travelItemList[0].title }}</li>-->
+</ul>
+
+  <div *ngFor="let travelItem of travelItemList">
+    <app-travel-item [travelItem]="travelItem"></app-travel-item>
+  </div>
+</div>

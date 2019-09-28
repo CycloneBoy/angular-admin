@@ -20,6 +20,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { HeroesModule }  from './heroes/heroes.module'
 import { CrisisCenterModule }      from './crisis-center/crisis-center.module';
+import {WelcomeModule} from './pages/welcome/welcome.module';
 
 registerLocaleData(zh);
 
@@ -42,6 +43,7 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     HeroesModule,
     CrisisCenterModule,
+    WelcomeModule,
     AppRoutingModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],

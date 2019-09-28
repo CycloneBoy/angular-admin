@@ -1,0 +1,43 @@
+<!--  中间列表-->
+<div class="travel-item-wrapper" >
+
+  <div class="row">
+    <div class="col-4">
+      <div class="tn-image">
+        <a href="{{travelItem.url}}">
+          <img src="{{travelItem.imageUrl}}">
+        </a>
+
+      </div>
+    </div>
+    <div class="col-8 tn-list">
+      <dl>
+        <dt>
+          <a href="{{travelItem.url}}">
+            {{travelItem.title}}
+          </a>
+        </dt>
+        <dd>
+          <a href="{{travelItem.url}}">
+            {{travelItem.shortContent}}
+          </a>
+        </dd>
+      </dl>
+      <div class="tn-extra">
+        <span class="tn-place">{{travelItem.destination}}</span>
+        <span class="tn-user">
+                  <a href="{{travelItem.authorUrl}}" >
+                    <img src="{{travelItem.authorImage}}">
+                    {{travelItem.authorName}}
+                  </a>
+                </span>
+        <span class="tn-nums">{{travelItem.viewCount + "/" + travelItem.commentCount}}</span>
+        <span class="tn-ding">
+
+                    {{travelItem.upCount}}
+                </span>
+      </div>
+    </div>
+  </div>
+
+</div>

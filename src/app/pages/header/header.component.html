@@ -1,33 +1,69 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<div class="header">
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
 
-  <!-- Brand -->
-  <div class="logo">
-    <a class="navbar-brand" href="#">
-      <img src="../../../assets/logo-ant.svg" alt=""/>
-      <span>蚂蜂窝游记分析小站</span>
-    </a>
-  </div>
-
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-        <a class="nav-link" href="#">游记</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">用户</a>
-    </li>
-
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Dropdown link
+    <!-- Brand -->
+    <div class="logo">
+      <a class="navbar-brand" href="#">
+        <img src="../../../assets/logo-ant.svg" alt=""/>
+        <span>游记分享小站</span>
       </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+    </div>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">游记</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">用户</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop_search" data-toggle="dropdown">
+          分析
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">城市</a>
+          <a class="dropdown-item" href="#">热门</a>
+          <a class="dropdown-item" href="#">图片</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">发游记</a>
+      </li>
+
+      <div class="search">
+        <form class="form-inline">
+          <input class="form-control" type="text" placeholder="搜索">
+          <button class="btn btn-success" type="button">搜索</button>
+        </form>
+
       </div>
-    </li>
-  </ul>
-</nav>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop_message" data-toggle="dropdown">
+          消息
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">私信</a>
+          <a class="dropdown-item" href="#">回复</a>
+          <a class="dropdown-item" href="#">喜欢</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">登录</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">注册</a>
+      </li>
+
+
+    </ul>
+  </nav>
+</div>
