@@ -1,0 +1,77 @@
+<div class="content-wrapper">
+
+  <div class="container">
+    <div class="row">
+      <!-- 左侧菜单-->
+      <div class="col-sm-3 col-md-6 col-lg-4 col-xl-4 content-nav-list">
+        <app-nav-right></app-nav-right>
+      </div>
+
+      <!--  中间列表-->
+      <div class="col-sm-9 col-md-6 col-lg-8 col-xl-8 content-list">
+
+        <div>
+          <p>按时间范围查询</p>
+          <div class="row">
+            <div class="col-5">
+              <div class="row">
+                <div class="col-3">
+                  <span>电话:</span>
+                </div>
+                <div class="col-9">
+                  <nz-input-group [nzSuffix]="suffixTemplate">
+                    <input  type="text" nz-input placeholder="输入待查询的电话号码" [(ngModel)]="telephone" />
+                  </nz-input-group>
+                  <ng-template #suffixTemplate
+                  ><i
+                          nz-icon
+                          nz-tooltip
+                          class="ant-input-clear-icon"
+                          nzTheme="fill"
+                          nzType="close-circle"
+                          *ngIf="telephone"
+                          (click)="telephone = null"
+                  ></i>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="row">
+                <div class="col-3">
+                  <span>时间:</span>
+                </div>
+                <div class="col-9">
+                  <nz-date-picker [(ngModel)]="date" (ngModelChange)="onQueryDateChange($event)"></nz-date-picker>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <button  (click)="getCallInfosByYear()" type="button" class="btn btn-primary">查询</button>
+            </div>
+          </div>
+
+
+<!--          <nz-range-picker [(ngModel)]="dateRange" (ngModelChange)="onQueryDateChange($event)"></nz-range-picker>-->
+          <br />
+
+          <p>语音通话服务按月份统计一年的</p>
+          <div echarts [options]="optionsByYear" class="monthData"></div>
+          <br>
+
+          <div>
+            <p>语音通话服务按日统计一个月的</p>
+            <button  (click)="getCallInfosByMonth()" type="button" class="btn btn-primary">查询</button>
+          </div>
+
+          <div echarts [options]="optionsByMonth" class="callSum"></div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

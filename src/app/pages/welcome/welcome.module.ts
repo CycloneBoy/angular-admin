@@ -11,11 +11,15 @@ import { TravelItemComponent } from '../common/travel-item/travel-item.component
 import { TravelListComponent } from '../common/travel-list/travel-list.component';
 import {CommonModule} from '@angular/common';
 import { TravelItemHomeComponent } from '../common/travel-item-home/travel-item-home.component';
+import { CallinfoComponent } from '../callinfo/callinfo.component';
+import {NgxEchartsModule} from 'ngx-echarts';
+import {NzDatePickerModule, NzInputModule} from 'ng-zorro-antd';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
-  imports: [WelcomeRoutingModule, CommonModule],
-  declarations: [WelcomeComponent, HeaderComponent, FooterComponent, ContentComponent, NavRightComponent, TravelItemComponent, TravelListComponent, TravelItemHomeComponent],
+    imports: [WelcomeRoutingModule, CommonModule, NgxEchartsModule, NzDatePickerModule, FormsModule, NzInputModule],
+  declarations: [WelcomeComponent, HeaderComponent, FooterComponent, ContentComponent, NavRightComponent, TravelItemComponent, TravelListComponent, TravelItemHomeComponent, CallinfoComponent],
   exports: [WelcomeComponent]
 })
 export class WelcomeModule { }

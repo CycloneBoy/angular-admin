@@ -199,4 +199,15 @@ export class Constants {
         }
       ];
     public static readonly BOOK_SHELF_FULL = "Full";
+
+  /**
+   * URL 请求链接
+   */
+  public static HOST_CALL_INFO = "http://localhost:10013";
+
+  public static URL_CALL_INFO_GET_BY_DAY = "/api/call/byday";
+
+  public static URL_CALL_INFO_GET_BY_MONTH = "/api/call/bymonth";
+
+  public static URL_CALL_INFO_GET_BY_YEAR = "/api/call/byyear";
 }

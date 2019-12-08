@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'card', component:  TableComponent},
   // { path: 'hero/:id',      component: NavLeftComponent },
   // { path: 'heroes',component: HeaderComponent,data: { title: 'Heroes List' }},
-  { path: '',redirectTo: '/we',pathMatch: 'full'},
+  { path: '',redirectTo: '/travel',pathMatch: 'full'},
   { path: '**', component: NotFoundComponent },
 
 ];

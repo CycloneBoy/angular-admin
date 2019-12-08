@@ -22,6 +22,9 @@ import { HeroesModule }  from './heroes/heroes.module'
 import { CrisisCenterModule }      from './crisis-center/crisis-center.module';
 import {WelcomeModule} from './pages/welcome/welcome.module';
 
+import { NgxEchartsModule } from 'ngx-echarts';
+import {httpInterceptorProviders} from './http-interceptors';
+
 registerLocaleData(zh);
 
 @NgModule({
@@ -45,8 +48,9 @@ registerLocaleData(zh);
     CrisisCenterModule,
     WelcomeModule,
     AppRoutingModule,
+    NgxEchartsModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN },httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
